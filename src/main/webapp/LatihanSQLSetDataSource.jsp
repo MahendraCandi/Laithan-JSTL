@@ -19,5 +19,19 @@
                 ${ex.message}
             </p>
         </c:if>
+        <c:choose>
+            <c:when test="${ex!=null}">
+                <p >
+                    The Exception : ${ex}
+                    <br><br>
+                    ${ex.message}
+                </p>
+            </c:when>
+            <c:otherwise>
+                <p>
+                    Sukses ....
+                </p>
+            </c:otherwise>
+        </c:choose>
     </body>
 </html>
