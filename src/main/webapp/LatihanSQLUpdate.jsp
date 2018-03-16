@@ -11,12 +11,18 @@
                            url="jdbc:mysql://localhost/dbtoko"
                            user="root" password="admin"/>
         
+        <sql:update var="del" dataSource="${conn}">
+            DELETE FROM Baju Where KodeBaju = 'AA04';
+        </sql:update>
         <sql:update var="ins" dataSource="${conn}">
             INSERT INTO Baju VALUES ('AA04', 'Reebook', 'l');
         </sql:update>
+        <sql:update var="upd" dataSource="${conn}">
+            UPDATE Baju SET MerkBaju = 'Sendiri' WHERE KodeBaju = 'AA01';
+        </sql:update>
             
         <sql:query  var="result" dataSource="${conn}">
-            SELECT * FROM Baju
+            SELECT * FROM Baju;
         </sql:query>
             <table border="1" width="50%">
                 <tr>
@@ -24,13 +30,13 @@
                     <th>Merk Baju</th>
                     <th>Ukuran</th>
                 </tr>
-                <cforEach var="row" items="${result.rows}">
+                <c:forEach var="row" items="${result.rows}">
                     <tr>
                         <td><c:out value="${row.KodeBaju}"/></td>
                         <td><c:out value="${row.MerkBaju}"/></td>
                         <td><c:out value="${row.Ukuran}"/></td>
                     </tr>
-                </cforeach>
+                </c:forEach>
             </table>
     </body>
 </html>
