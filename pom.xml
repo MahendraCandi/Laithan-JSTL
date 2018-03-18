@@ -38,6 +38,20 @@
         <artifactId>mysql-connector-java</artifactId>
         <version>5.1.45</version>
     </dependency>
+    
+    <!-- add bootstrap dependency -->
+    <dependency>
+        <groupId>org.webjars</groupId>
+        <artifactId>bootstrap</artifactId>
+        <version>4.0.0-2</version>
+    </dependency>
+    
+    <!-- Bootstrap butuh JQuery, jadi tambah depency JQuery-->
+    <dependency>
+        <groupId>org.webjars</groupId>
+        <artifactId>jquery</artifactId>
+        <version>3.3.1-1</version>
+    </dependency>
   </dependencies>
   
   <build>
